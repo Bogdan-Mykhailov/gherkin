@@ -3,9 +3,9 @@ Feature: Trello Account and Board Management
   Scenario: User sign up for a new Trello account
     Given the user is on the Trello sign-up page
     When the user enters a valid email
-    And clicks the "Sign Up" button
+    And clicks the 'Sign Up' button
     Then the user should see an account creation page
-    And the user clicks the "Create your account" button
+    And the user clicks the 'Create your account' button
     Then a verification email should be sent to the registered email address
 
   Scenario: User signs in to an existing Trello account

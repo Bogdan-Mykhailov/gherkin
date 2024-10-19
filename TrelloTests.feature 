@@ -2,26 +2,21 @@ Feature: Trello Account and Board Management
 
   Scenario: User sign up for a new Trello account
     Given the user is on the Trello sign-up page
-    When the user enters a valid email
-    And clicks the 'Sign Up' button
+    When the user enters a valid email and clicks the 'Sign Up' button
     Then the user should see an account creation page
     And the user clicks the 'Create your account' button
     Then a verification email should be sent to the registered email address
 
   Scenario: User signs in to an existing Trello account
     Given the user is on the Trello sign-in page
-    When the user enters their email
-    And clicks the 'Continue' button
+    When the user enters their email and clicks the 'Continue' button
     Then the user should see the password field
-    When the user enters their password
-    And clicks the 'Log in' button
+    When the user enters their password and clicks the 'Log in' button
     Then the user should be redirected to their Trello dashboard
     And the user should see their boards
 
   Scenario: Edit user profile
     Given the user is logged in to Trello
-    When the user navigates to the Profile and visibility
-    Then the user should see the profile settings tab
     When the user navigates to the profile settings
     And updates their profile information
     Then the changes should be saved successfully
@@ -29,40 +24,28 @@ Feature: Trello Account and Board Management
 
   Scenario: Create a new board
     Given the user is on the Trello dashboard
-    When the user clicks the 'Create' button
-    Then the user should see the popup with 'Create board' button
-    When the user clicks the 'Create board' button
-    And enters a title for the board
-    Then the 'Create' button should be enabled
-    When the user clicks the 'Create' button
-    Then a new board should be created
-    And the created board should open with empty lists
+    When the user clicks the 'Create' button and then clicks the 'Create board' button
+    And enters a title for the board and clicks 'Create' button
+    Then a new board should be created and open with empty lists
 
   Scenario: Search for a board
     Given the user has multiple boards on their Trello account
-    When the user clicks on the search bar
-    Then the user should see a list of recent boards
-    When the user types the board name in the search bar
+    When the user clicks on the search bar and types the board name
     Then the relevant board should appear in the search results
 
   Scenario: Create a list on a board
     Given the user is viewing a specific Trello board
-    When the user clicks on the '+ Add List' button
-    Then the user should see the 'Enter list name' field
-    When the user enters a list name
+    When the user clicks on the '+ Add List' button and enters a list name
     And the user clicks the 'Add list' button
     Then the new list should appear on the board
 
   Scenario: Create a card on a list
     Given the user has a list on a Trello board
-    When the user clicks on the '+ Add a card' button below the list
-    Then the user should see the 'Enter a title or paste a link' field
-    When the user enters a card name
+    When the user clicks on the '+ Add a card' button below the list and enters a card name
     And the user clicks the 'Add card' button
     Then the new card should be added to the list
 
   Scenario: Edit workspace details
     Given the user is viewing the Trello workspace settings
-    When the user edits the workspace name or description
-    And saves the changes
+    When the user edits the workspace name or description and saves the changes
     Then the updated workspace details should be displayed

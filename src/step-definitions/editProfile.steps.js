@@ -38,7 +38,6 @@ When('the user update their profile information and click save button', async ()
   const saveButton = await $('//button[@type="submit"]');
   const updatedName = getUpdatedText(userName);
 
-  // await userNameField.waitForDisplayed();
   await browser.pause(2000);
   await userNameField.setValue(updatedName);
   await bioField.setValue('awesome fellow');

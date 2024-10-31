@@ -5,8 +5,7 @@ const {
   When,
   Then,
 } = require('@wdio/cucumber-framework');
-
-let userName = '';
+const { getUserNameFromUrl } = require('../utils/helpers');
 
 Given('the user is on the Trello sign-in page', async () => {
   await browser.url('https://trello.com/login');
@@ -37,9 +36,7 @@ When('the user enters their password and clicks the \'Log in\' button', async ()
 
 Then('the user should be redirected to their Trello home page', async () => {
   const currentUrl = await browser.getUrl();
-
-  const urlParts = currentUrl.split('/');
-  userName = urlParts[urlParts.indexOf('u') + 1];
+  const userName = getUserNameFromUrl(currentUrl);
 
   const expectedUrl = `https://trello.com/u/${userName}/boards`;
   const actualUrl = await browser.getUrl();

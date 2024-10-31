@@ -7,4 +7,12 @@ const getUpdatedText = (text) => {
   return text + '1';
 };
 
-module.exports = getUpdatedText;
+const getUserNameFromUrl = (url) => {
+  let userName = '';
+  const urlParts = url.split('/');
+  userName = urlParts[urlParts.indexOf('u') + 1];
+
+  return userName;
+};
+
+module.exports = { getUpdatedText, getUserNameFromUrl };

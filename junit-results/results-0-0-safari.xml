@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" errors="0" skipped="0">
+  <testsuite name="Trello Account and Board Management" timestamp="2024-11-01T11:16:34" time="10.355" tests="2" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Trello Account and Board Management"/>
+      <property name="capabilities" value="safari.18_0_1.macos"/>
+      <property name="featureFile" value="file://./src/features/trelloTestingScenarios.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-safari.18_0_1.macos.Trello Account and Board Management" name="User signs in to an existing Trello account" time="8.352">
+      <system-out><![CDATA[
+✅ Given the user is on the Trello sign-in page✅ When the user enters their email and clicks the 'Continue' button✅ Then the user should see the password field✅ When the user enters their password and clicks the 'Log in' button✅ Then the user should be redirected to their Trello home page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-safari.18_0_1.macos.Trello Account and Board Management" name="Create a card on a list" time="1.987">
+      <system-out><![CDATA[
+✅ Given the user has a list on a Trello board✅ When the user clicks on the '+ Add a card' button✅ Then the user should see a new card field and enters a card name✅ When the user clicks on the 'Add a card' button✅ Then the new card should be added to the list
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

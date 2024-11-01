@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="2" failures="0" errors="0" skipped="0">
-  <testsuite name="Trello Account and Board Management" timestamp="2024-10-31T17:11:14" time="14.189" tests="2" failures="0" errors="0" skipped="0">
+<testsuites tests="3" failures="0" errors="0" skipped="0">
+  <testsuite name="Trello Account and Board Management" timestamp="2024-11-01T14:05:34" time="22.614" tests="3" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="featureName" value="Trello Account and Board Management"/>
-      <property name="capabilities" value="chrome.130_0_6723_70.mac"/>
+      <property name="capabilities" value="chrome.130_0_6723_92.mac"/>
       <property name="featureFile" value="file://./src/features/trelloTestingScenarios.feature"/>
     </properties>
-    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_70.mac.Trello Account and Board Management" name="User signs in to an existing Trello account" time="9.267">
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account and Board Management" name="User signs in to an existing Trello account" time="11.775">
       <system-out><![CDATA[
 ✅ Given the user is on the Trello sign-in page✅ When the user enters their email and clicks the 'Continue' button✅ Then the user should see the password field✅ When the user enters their password and clicks the 'Log in' button✅ Then the user should be redirected to their Trello home page
 ]]></system-out>
     </testcase>
-    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_70.mac.Trello Account and Board Management" name="Create a list on a board" time="4.908">
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account and Board Management" name="Edit user profile information" time="5.62">
       <system-out><![CDATA[
-✅ Given the user is viewing a specific Trello board✅ When the user clicks on the '+ Add List' button✅ Then the user should see list name field
-✅ When the user enters a list name and clicks on the 'Add list' button✅ Then the new list should appear on the board
+✅ Given the user is logged in to Trello workspace✅ When the user click on account icon and select Profile and visibility✅ Then the user navigates to the profile settings✅ When the user update their profile information and click save button✅ Then the changes should be saved successfully, and the user will see an alert
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account and Board Management" name="Create a new board" time="5.194">
+      <system-out><![CDATA[
+✅ Given the user is on the Trello dashboard✅ When the user clicks on the 'Create' button✅ Then the user should see a create board options list
+✅ When the user clicks on the 'Create board' button✅ Then the user should see create board menu
+✅ When the user enters a title for the board and clicks 'Create' button✅ Then the new board should be created and navigated to it
 ]]></system-out>
     </testcase>
   </testsuite>

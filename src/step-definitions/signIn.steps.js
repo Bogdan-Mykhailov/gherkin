@@ -1,54 +1,37 @@
 'use strict';
 
+const LoginPage = require('../po/pages/login.page');
 const {
   Given,
   When,
   Then,
 } = require('@wdio/cucumber-framework');
+const { credentials } = require('../data/credentials');
+const BoardsPage = require('../po/pages/boards.page');
 
-const EMAIL = 'babashka80930372542@gmail.com';
-const PASSWORD = 'Qwerty!12345';
+const loginPage = new LoginPage();
+const boardsPage = new BoardsPage();
 
 Given('the user is on the Trello sign-in page', async () => {
-  await browser.url('https://trello.com/login');
+  await loginPage.open();
 });
 
 When('the user enters their email and clicks the \'Continue\' button', async () => {
-  const emailInput = await $('input[data-testid="username"]');
-  const signUpButton = await $('button[id="login-submit"]');
-
-  await emailInput.setValue(EMAIL);
-  await signUpButton.click();
+  await loginPage.loginForm.enterEmail(credentials.email);
+  await loginPage.loginForm.clickLoginButton();
 });
 
 Then('the user should see the password field', async () => {
-  const passwordInput = await $('input[data-testid="password"]');
-
-  await passwordInput.waitForDisplayed({ timeout: 5000 });
-  await expect(passwordInput).toBeDisplayed();
+  await loginPage.loginForm.passwordInputField.waitForDisplayed({ timeout: 5000 });
+  await expect(loginPage.loginForm.passwordInputField).toBeDisplayed();
 });
 
 When('the user enters their password and clicks the \'Log in\' button', async () => {
-  const passwordInput = await $('input[data-testid="password"]');
-  const signUpButton = await $('button[id="login-submit"]');
-
-  await passwordInput.waitForEnabled({ timeout: 5000 });
-  await passwordInput.setValue(PASSWORD);
-  await signUpButton.waitForClickable({ timeout: 5000 });
-  await signUpButton.click();
+  await loginPage.loginForm.enterPassword(credentials.password);
+  await loginPage.loginForm.clickLoginButton();
 });
 
-Then('the user should be redirected to their Trello home page', async () => {
-  const expectedUrl = 'https://trello.com/u/bogdan_mykhailov1/boards';
-  let actualUrl = '';
-
-  await browser.waitUntil(
-    async () => {
-      actualUrl = await browser.getUrl();
-      return actualUrl === expectedUrl;
-    },
-    { timeout: 5000 },
-  );
-
-  await expect(actualUrl).toBe(expectedUrl);
+Then('the user should be redirected to their Trello boards page', async () => {
+  const actualUrl = await boardsPage.verifyRedirectionToBoardsPage();
+  await expect(actualUrl).toBe(credentials.boardsPageUrl);
 });

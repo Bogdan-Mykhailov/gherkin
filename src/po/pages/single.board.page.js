@@ -2,12 +2,18 @@
 
 const BasePage = require('./base.page');
 const { credentials } = require('../../data/credentials');
+const AddListPopUp = require('../components/add.list');
 
 class SingleBoardPage extends BasePage {
   constructor() {
     super();
     this.actualUrl = '';
     this.expectedUrl = '';
+    this.addListPopUp = new AddListPopUp();
+  }
+
+  async open() {
+    return browser.url('https://trello.com/b/LPsEPgXa/test');
   }
 
   async verifyBoardCreationAndNavigation() {

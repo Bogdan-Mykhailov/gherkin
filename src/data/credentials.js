@@ -5,5 +5,6 @@ module.exports = {
     boardTitle: 'board',
     userName: 'bogdan_mykhailov1',
     boardsPageUrl: 'https://trello.com/u/bogdan_mykhailov1/boards',
+    listTitle: 'New List',
   },
 };

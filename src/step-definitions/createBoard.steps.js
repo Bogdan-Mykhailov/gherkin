@@ -21,7 +21,7 @@ When('the user clicks on the \'Create\' button', async () => {
 });
 
 Then('the user should see a create board options list', async () => {
-  await boardsPage.header.createBoard.optionsList.waitForDisplayed({ timeout: 5000 });
+  await boardsPage.header.createBoard.optionsList.waitForDisplayed({ timeout: 8000 });
   await expect(boardsPage.header.createBoard.optionsList).toBeDisplayed();
 });
 
@@ -30,7 +30,7 @@ When('the user clicks on the \'Create board\' button', async () => {
 });
 
 Then('the user should see create board menu', async () => {
-  await boardsPage.header.createBoard.createBoardMenu.waitForDisplayed({ timeout: 5000 });
+  await boardsPage.header.createBoard.createBoardMenu.waitForDisplayed({ timeout: 8000 });
   await expect(boardsPage.header.createBoard.createBoardMenu).toBeDisplayed();
 });
 

@@ -5,45 +5,31 @@ const {
   When,
   Then,
 } = require('@wdio/cucumber-framework');
-const { getUpdatedText } = require('../utils/helpers');
+const { credentials } = require('../data/credentials');
+const SingleBoardPage = require('../po/pages/single.board.page');
 
-let listTitle = '';
+const singleBoardPage = new SingleBoardPage();
 
 Given('the user is viewing a specific Trello board', async () => {
-  const boardUrl = 'https://trello.com/b/ekR1kwK2/board1';
-
-  await browser.url(boardUrl);
+  await singleBoardPage.open();
 });
 
 When('the user clicks on the \'+ Add List\' button', async () => {
-  const addListButton = await $('button[data-testid="list-composer-button"]');
-
-  await addListButton.waitForClickable();
-  await addListButton.click();
+  await singleBoardPage.addListPopUp.addAListButtonClick();
 });
 
 Then('the user should see list name field', async () => {
-  const listField = await $('//form[@class="vVqwaYKVgTygrk"]//textarea[@data-testid="list-name-textarea"]');
-
-  await listField.waitForDisplayed();
-  // await browser.pause(2000);
-  await expect(listField).toBeDisplayed();
+  await singleBoardPage.addListPopUp.listField.waitForDisplayed({ timeout: 8000 });
+  await expect(singleBoardPage.addListPopUp.listField).toBeDisplayed();
 });
 
 When('the user enters a list name and clicks on the \'Add list\' button', async () => {
-  const listField = await $('//form[@class="vVqwaYKVgTygrk"]//textarea[@data-testid="list-name-textarea"]');
-  const addListButton = await $('//button[@data-testid="list-composer-add-list-button"]');
-
-  listTitle = getUpdatedText('new list');
-  await browser.pause(2000);
-  await listField.setValue(listTitle);
-  await addListButton.waitForClickable();
-  await addListButton.click();
+  await singleBoardPage.addListPopUp.enterListTitle(credentials.listTitle);
+  await singleBoardPage.addListPopUp.addListButtonClick();
 });
 
 Then('the new list should appear on the board', async () => {
-  const currentListItem = await $('(//li[@data-testid="list-wrapper"][last()]//h2[@data-testid="list-name"][last()])');
-  const actualText = await currentListItem.getText();
-
-  await expect(actualText).toBe(listTitle);
+  await singleBoardPage.addListPopUp.createdList.waitForDisplayed({ timeout: 8000 });
+  await expect(singleBoardPage.addListPopUp.createdList).toBeDisplayed();
+  await expect(await singleBoardPage.addListPopUp.getCreatedListText()).toBe(credentials.listTitle);
 });

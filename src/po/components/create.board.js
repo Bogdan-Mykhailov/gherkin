@@ -1,4 +1,4 @@
-class CreateBoard {
+class CreateBoardPopUp {
   constructor() {
     this.selectors = {
       createBoardButton: '//button[@data-testid="header-create-board-button"]',
@@ -42,4 +42,4 @@ class CreateBoard {
   }
 }
 
-module.exports = CreateBoard;
+module.exports = CreateBoardPopUp;

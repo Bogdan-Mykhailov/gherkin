@@ -4,6 +4,8 @@ module.exports = {
     password: 'Qwerty!12345',
     boardTitle: 'board',
     userName: 'bogdan_mykhailov1',
+    userNameForUpdate: 'bogdan_mykhailov2',
+    userBio: 'London is the capital of GB',
     boardsPageUrl: 'https://trello.com/u/bogdan_mykhailov1/boards',
     listTitle: 'New List',
   },

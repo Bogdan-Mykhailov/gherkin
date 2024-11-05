@@ -10,7 +10,7 @@ Feature: Trello Account Management
 #    Then the user should see an "Invite your team" title
 #    When the user clicks the 'Skip' button
 #    Then a verification email should be sent to the registered email address
-#
+
   Scenario: User signs in to an existing Trello account
     Given the user is on the Trello sign-in page
     When the user enters their email and clicks the 'Continue' button
@@ -34,9 +34,23 @@ Feature: Trello Account Management
     When the user enters a list name and clicks on the 'Add list' button
     Then the new list should appear on the board
 
-#  Scenario: Edit user profile information
-#    Given the user is logged in to Trello workspace
-#    When the user click on account icon and select Profile and visibility
-#    Then the user navigates to the profile settings
-#    When the user update their profile information and click save button
-#    Then the changes should be saved successfully, and the user will see an alert
+  Scenario: Edit user profile information
+    Given the user on the Trello boards page
+    When the user click on account icon
+    Then the user should see a account menu
+    When the user click on Profile and visibility button
+    Then the user navigates to the profile settings
+    When the user update their profile information and click save button
+    Then the changes should be saved successfully, and the user will see an alert
+
+#  Scenario: Search for a board
+#    Given the user is on the Trello homepage
+#    When the user clicks on the search bar and entered the board name
+#    Then the relevant board should appear in the search results
+
+#  Scenario: Create a card on a list
+#    Given the user has a list on a Trello board
+#    When the user clicks on the '+ Add a card' button
+#    Then the user should see a new card field and enters a card name
+#    When the user clicks on the 'Add a card' button
+#    Then the new card should be added to the list

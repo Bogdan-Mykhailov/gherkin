@@ -5,6 +5,7 @@ class Header {
     this.createBoard = new CreateBoard();
     this.selectors = {
       createButton: '//button[@data-testid="header-create-menu-button"]',
+      accountButton: '//div[@data-testid="header-member-menu-avatar"]',
     };
   }
 
@@ -12,8 +13,16 @@ class Header {
     return $(this.selectors.createButton);
   }
 
+  get headerAccountButton() {
+    return $(this.selectors.accountButton);
+  }
+
   async headerCreateButtonClick() {
     await this.headerCreateButton.click();
+  }
+
+  async headerAccountButtonClick() {
+    await this.headerAccountButton.click();
   }
 }
 

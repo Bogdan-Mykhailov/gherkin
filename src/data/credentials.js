@@ -11,5 +11,7 @@ module.exports = {
     listTitle: 'New List',
     searchingBoardTitle: 'board4',
     cardTitle: 'learn AWS',
+    userAccountId: 'userworkspace36308531',
+    updatedWorkspaceName: 'Workspace Alpha',
   },
 };

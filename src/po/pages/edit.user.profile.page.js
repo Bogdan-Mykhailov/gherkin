@@ -8,7 +8,7 @@ class EditUserProfilePage extends BasePage {
   }
 
   async open(userName) {
-    return browser.url(`https://trello.com/u/${userName}/boards`);
+    return browser.url(`${this.url}/boards`);
   }
 
   async verifyRedirectionToEditProfilePage() {

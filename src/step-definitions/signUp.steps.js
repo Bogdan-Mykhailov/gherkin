@@ -5,50 +5,47 @@ const {
   When,
   Then,
 } = require('@wdio/cucumber-framework');
+const RegisterPage = require('../po/pages/register.page');
+
+const registerPage = new RegisterPage();
 
 Given('the user is on the Trello sign-up page', async () => {
-  await browser.url('https://id.atlassian.com/signup');
+  await registerPage.open();
 });
 
 When('the user enters a valid email and clicks the \'Sign Up\' button', async () => {
-  const emailInput = await $('input[id="email"]');
-  const signUpButton = await $('button[id="signup-submit"]');
-
-  await emailInput.setValue('bogdan@mailinator.com');
-  await signUpButton.click();
+  await registerPage.registerForm.enterValidEmail('bogdan@mailinator.com');
+  await registerPage.registerForm.signUpButtonClick();
 });
 
 Then('the user should see a "What brings you here today?" title', async () => {
-  const pageHeading = await $('div=What brings you here today?');
-  await expect(pageHeading).toBeDisplayed();
+  await registerPage.registerForm.pageHeading.waitForDisplayed({ timeout: 8000 });
+  await expect(registerPage.registerForm.pageHeading).toBeDisplayed();
 });
 
 When('the user clicks the \'Skip\' button', async () => {
-  const skipButton = await $('button[class="y3qsM1P5OoRSsX bxgKMAm3lq5BpA SEj5vUdI3VvxDc"]');
-  await skipButton.click();
+  await registerPage.registerForm.skipButtonClick();
 });
 
 Then('the user should see an "It all starts with the board" title', async () => {
-  const pageHeading = await $('h1=It all starts with the board');
-  await expect(pageHeading).toBeDisplayed();
+  await registerPage.registerForm.createBoardPageTitle.waitForDisplayed({ timeout: 8000 });
+  await expect(registerPage.registerForm.createBoardPageTitle).toBeDisplayed();
 });
 
 When('the user clicks the \'Skip\' button', async () => {
-  const skipButton = await $('button[data-testid="name-board-skip-button"]');
-  await skipButton.click();
+  await registerPage.registerForm.skipCreateBoardButtonClick();
 });
 
 Then('the user should see an "Invite your team" title', async () => {
-  const pageHeading = await $('h1=Invite your team');
-  await expect(pageHeading).toBeDisplayed();
+  await registerPage.registerForm.inviteTeamPageTitle.waitForDisplayed({ timeout: 8000 });
+  await expect(registerPage.registerForm.inviteTeamPageTitle).toBeDisplayed();
 });
 
 When('the user clicks the \'Skip\' button', async () => {
-  const skipButton = await $('button[data-testid="invite-skip-button"]');
-  await skipButton.click();
+  await registerPage.registerForm.skipInviteTeamButtonClick();
 });
 
 Then('a verification email should be sent to the registered email address', async () => {
-  const confirmationMessage = await $('h2=Let\'s verify your email');
-  await expect(confirmationMessage).toBeDisplayed();
+  await registerPage.registerForm.confirmationMessage.waitForDisplayed({ timeout: 8000 });
+  await expect(registerPage.registerForm.confirmationMessage).toBeDisplayed();
 });

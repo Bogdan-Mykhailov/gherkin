@@ -4,6 +4,17 @@ const { credentials } = require('../../data/credentials');
 class BoardsPage extends BasePage {
   constructor() {
     super();
+    this.selectors = {
+      settingsButton: '//a[@data-testid="home-team-settings-tab"]',
+    };
+  }
+
+  get settingsButton() {
+    return $(this.selectors.settingsButton);
+  }
+
+  async settingsButtonClick() {
+    return await this.settingsButton.click();
   }
 
   async open(userName) {

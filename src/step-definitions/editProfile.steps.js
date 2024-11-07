@@ -19,13 +19,13 @@ When('the user click on account icon', async () => {
 });
 
 Then('the user should see a account menu', async () => {
-  await editProfile.accountMenu.accountMenu.waitForDisplayed({ timeout: 8000 });
-  await expect(editProfile.accountMenu.accountMenu).toBeDisplayed();
+  await editProfile.header.accountMenu.accountMenu.waitForDisplayed({ timeout: 8000 });
+  await expect(editProfile.header.accountMenu.accountMenu).toBeDisplayed();
 
 });
 
 When('the user click on Profile and visibility button', async () => {
-  await editProfile.accountMenu.profileAndVisibilityButtonClick();
+  await editProfile.header.accountMenu.profileAndVisibilityButtonClick();
 });
 
 Then('the user navigates to the profile settings', async () => {
@@ -34,16 +34,14 @@ Then('the user navigates to the profile settings', async () => {
 });
 
 When('the user update their profile information and click save button', async () => {
-  await editProfile.accountMenu.updateUserName(credentials.userNameForUpdate);
-  await editProfile.accountMenu.updateUserBio(credentials.userBio);
-  await editProfile.accountMenu.saveButtonClick();
-
+  await editProfile.header.accountMenu.updateUserName(credentials.userNameForUpdate);
+  await editProfile.header.accountMenu.updateUserBio(credentials.userBio);
+  await editProfile.header.accountMenu.saveButtonClick();
 });
 
 Then('the changes should be saved successfully, and the user will see an alert', async () => {
-  await editProfile.accountMenu.alert.waitForDisplayed({ timeout: 8000 });
-  await expect(editProfile.accountMenu.alert).toBeDisplayed();
-
-  await editProfile.accountMenu.returnPreviousUserName(credentials.userName);
-  await editProfile.accountMenu.saveButtonClick();
+  await editProfile.header.accountMenu.alert.waitForDisplayed({ timeout: 8000 });
+  await expect(editProfile.header.accountMenu.alert).toBeDisplayed();
+  await editProfile.header.accountMenu.returnPreviousUserName(credentials.userName);
+  await editProfile.header.accountMenu.saveButtonClick();
 });

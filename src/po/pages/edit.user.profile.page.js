@@ -1,12 +1,10 @@
 const BasePage = require('./base.page');
-const AccountMenu = require('../components/account.menu');
 
 class EditUserProfilePage extends BasePage {
   constructor(userName) {
     super();
     this.url = `https://trello.com/u/${userName}`;
     this.actualUrl = '';
-    this.accountMenu = new AccountMenu();
   }
 
   async open(userName) {

@@ -36,6 +36,7 @@ Then('the user should see create board menu', async () => {
 
 When('the user enters a title for the board and clicks \'Create\' button', async () => {
   await boardsPage.header.createBoard.enterTheBoardTitle(credentials.boardTitle);
+  await browser.pause(1000);
   await boardsPage.header.createBoard.createButtonClick();
 });
 

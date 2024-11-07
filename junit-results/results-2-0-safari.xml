@@ -1,2 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="0" failures="0" errors="0" skipped="0"/>
+<testsuites tests="6" failures="3" errors="0" skipped="0">
+  <testsuite name="Trello Account Management" timestamp="2024-11-06T23:19:40" time="52.108" tests="6" failures="3" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Trello Account Management"/>
+      <property name="capabilities" value="safari.18_0_1.macos"/>
+      <property name="featureFile" value="file://./src/features/trello.tests.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-safari.18_0_1.macos.Trello Account Management" name="User signs in to an existing Trello account" time="6.823">
+      <system-out><![CDATA[
+✅ Given the user is on the Trello sign-in page✅ When the user enters their email and clicks the 'Continue' button✅ Then the user should see the password field✅ When the user enters their password and clicks the 'Log in' button✅ Then the user should be redirected to their Trello boards page
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-safari.18_0_1.macos.Trello Account Management" name="Create a new board" time="9.188">
+      <failure message="Error: element (&quot;nav[class=&quot;IfckxJ5PbpJuxT&quot;]&quot;) still not displayed after 8000ms"/>
+      <system-out><![CDATA[
+✅ Given the user is on the Trello dashboard✅ When the user clicks on the 'Create' button❗ Then the user should see a create board options list⚠️ When the user clicks on the 'Create board' button
+⚠️ Then the user should see create board menu
+⚠️ When the user enters a title for the board and clicks 'Create' button
+⚠️ Then the new board should be created and navigated to it
+
+]]></system-out>
+      <system-err><![CDATA[
+Error: element ("nav[class="IfckxJ5PbpJuxT"]") still not displayed after 8000ms
+    at <anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:4680:15)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6872:24)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6872:24)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/createBoard.steps.js:24:3)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-safari.18_0_1.macos.Trello Account Management" name="Create a list on a board" time="7.173">
+      <system-out><![CDATA[
+✅ Given the user is viewing a specific Trello board✅ When the user clicks on the '+ Add List' button✅ Then the user should see list name field✅ When the user enters a list name and clicks on the 'Add list' button✅ Then the new list should appear on the board
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-safari.18_0_1.macos.Trello Account Management" name="Edit user profile information" time="4.592">
+      <system-out><![CDATA[
+✅ Given the user on the Trello boards page✅ When the user click on account icon✅ Then the user should see a account menu✅ When the user click on Profile and visibility button✅ Then the user navigates to the profile settings✅ When the user update their profile information and click save button✅ Then the changes should be saved successfully, and the user will see an alert
+]]></system-out>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-safari.18_0_1.macos.Trello Account Management" name="Search for a board" time="8.273">
+      <failure message="Error: Search popup did not appear in Firefox"/>
+      <system-out><![CDATA[
+✅ Given the user is on the Trello homepage✅ When the user clicks on the search bar❗ Then the user should see a search popup⚠️ When the user entered the board name
+⚠️ Then the relevant board should appear in the search results
+
+]]></system-out>
+      <system-err><![CDATA[
+Error: Search popup did not appear in Firefox
+    at <anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:4680:15)
+    at Browser.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/searchBoard.steps.js:22:3)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-safari.18_0_1.macos.Trello Account Management" name="Create a card on a list" time="16.032">
+      <failure message="webdriverio(middleware): element did not become interactable: Element &lt;textarea data-testid=&quot;list-card-composer-textarea&quot; class=&quot;qJv26NWQGVKzI9&quot; dir=&quot;auto&quot; placeholder=&quot;Enter a title or paste a link&quot; style=&quot;height: 56px;&quot;>&lt;/textarea> did not become interactable"/>
+      <system-out><![CDATA[
+✅ Given the user has a list on a Trello board✅ When the user clicks on the '+ Add a card' button✅ Then the user should see a new card field❗ When the user enters a card name and clicks on the 'Add a card' button⚠️ Then the new card should be added to the list
+]]></system-out>
+      <system-err><![CDATA[
+webdriverio(middleware): element did not become interactable: Element <textarea data-testid="list-card-composer-textarea" class="qJv26NWQGVKzI9" dir="auto" placeholder="Enter a title or paste a link" style="height: 56px;"></textarea> did not become interactable
+    at FetchRequest._request (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/webdriver/build/index.js:1362:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6872:24)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6872:24)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.setValue (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:5811:3)
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

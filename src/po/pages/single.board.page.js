@@ -13,7 +13,7 @@ class SingleBoardPage extends BasePage {
   }
 
   async open() {
-    return browser.url('https://trello.com/b/LPsEPgXa/test');
+    return browser.url(credentials.singleBoardUrl);
   }
 
   async verifyBoardCreationAndNavigation() {

@@ -43,14 +43,16 @@ Feature: Trello Account Management
     When the user update their profile information and click save button
     Then the changes should be saved successfully, and the user will see an alert
 
-#  Scenario: Search for a board
-#    Given the user is on the Trello homepage
-#    When the user clicks on the search bar and entered the board name
-#    Then the relevant board should appear in the search results
+  Scenario: Search for a board
+    Given the user is on the Trello homepage
+    When the user clicks on the search bar
+    Then the user should see a search popup
+    When the user entered the board name
+    Then the relevant board should appear in the search results
 
-#  Scenario: Create a card on a list
-#    Given the user has a list on a Trello board
-#    When the user clicks on the '+ Add a card' button
-#    Then the user should see a new card field and enters a card name
-#    When the user clicks on the 'Add a card' button
-#    Then the new card should be added to the list
+  Scenario: Create a card on a list
+    Given the user has a list on a Trello board
+    When the user clicks on the '+ Add a card' button
+    Then the user should see a new card field
+    When the user enters a card name and clicks on the 'Add a card' button
+    Then the new card should be added to the list

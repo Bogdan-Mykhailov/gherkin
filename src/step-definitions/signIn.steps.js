@@ -22,7 +22,7 @@ When('the user enters their email and clicks the \'Continue\' button', async () 
 });
 
 Then('the user should see the password field', async () => {
-  await loginPage.loginForm.passwordInputField.waitForDisplayed({ timeout: 5000 });
+  await loginPage.loginForm.passwordInputField.waitForDisplayed({ timeout: 8000 });
   await expect(loginPage.loginForm.passwordInputField).toBeDisplayed();
 });
 
@@ -32,6 +32,5 @@ When('the user enters their password and clicks the \'Log in\' button', async ()
 });
 
 Then('the user should be redirected to their Trello boards page', async () => {
-  const actualUrl = await boardsPage.verifyRedirectionToBoardsPage();
-  await expect(actualUrl).toBe(credentials.boardsPageUrl);
+  await expect(await boardsPage.verifyRedirectionToBoardsPage()).toBe(credentials.boardsPageUrl);
 });

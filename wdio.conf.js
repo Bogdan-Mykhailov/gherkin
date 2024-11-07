@@ -50,16 +50,22 @@ exports.config = {
   // https://saucelabs.com/platform/platform-configurator
   //
   capabilities: [
+    // {
+    //   browserName: 'chrome',
+    // },
+    // {
+    //   browserName: 'firefox',
+    // },
     {
       browserName: 'firefox',
       'moz:firefoxOptions': {
-        args: ['-headless'],
+        args: ['-headless', '--disable-gpu'],
       },
     },
     {
       browserName: 'chrome',
       'goog:chromeOptions': {
-        args: ['--headless', '--disable-gpu'],
+        args: ['-headless', '--disable-gpu'],
       },
     },
     {

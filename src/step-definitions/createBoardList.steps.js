@@ -20,6 +20,7 @@ When('the user clicks on the \'+ Add List\' button', async () => {
 
 Then('the user should see list name field', async () => {
   await singleBoardPage.addListPopUp.listField.waitForDisplayed({ timeout: 8000 });
+  await browser.pause(1000);
   await expect(singleBoardPage.addListPopUp.listField).toBeDisplayed();
 });
 

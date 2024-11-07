@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="7" failures="7" errors="0" skipped="0">
+  <testsuite name="Trello Account Management" timestamp="2024-11-07T13:51:55" time="78.247" tests="7" failures="7" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="Trello Account Management"/>
+      <property name="capabilities" value="chrome.130_0_6723_92.mac"/>
+      <property name="featureFile" value="file://./src/features/trello.tests.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account Management" name="User signs in to an existing Trello account" time="14.735">
+      <failure message="Error: Expected to be redirected to https://trello.com/u/bogdan_mykhailov1/boards but was not."/>
+      <system-out><![CDATA[
+✅ Given the user is on the Trello sign-in page✅ When the user enters their email and clicks the 'Continue' button✅ Then the user should see the password field✅ When the user enters their password and clicks the 'Log in' button❗ Then the user should be redirected to their Trello boards page
+]]></system-out>
+      <system-err><![CDATA[
+Error: Expected to be redirected to https://trello.com/u/bogdan_mykhailov1/boards but was not.
+    at <anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:4680:15)
+    at Browser.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async BoardsPage.verifyRedirectionToBoardsPage (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/po/pages/boards.page.js:25:5)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/signIn.steps.js:35:16)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account Management" name="Create a new board" time="12.9">
+      <failure message="Error: Can't call click on element with selector &quot;//button[@data-testid=&quot;header-create-menu-button&quot;]&quot; because element wasn't found"/>
+      <system-out><![CDATA[
+✅ Given the user is on the Trello dashboard❗ When the user clicks on the 'Create' button
+⚠️ Then the user should see a create board options list
+⚠️ When the user clicks on the 'Create board' button
+⚠️ Then the user should see create board menu
+⚠️ When the user enters a title for the board and clicks 'Create' button
+⚠️ Then the new board should be created and navigated to it
+
+]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call click on element with selector "//button[@data-testid="header-create-menu-button"]" because element wasn't found
+    at implicitWait (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:49:13)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6868:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async Header.headerCreateButtonClick (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/po/components/header.js:30:5)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/createBoard.steps.js:20:3)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account Management" name="Create a list on a board" time="10.713">
+      <failure message="Error: Can't call click on element with selector &quot;button[data-testid=&quot;list-composer-button&quot;]&quot; because element wasn't found"/>
+      <system-out><![CDATA[
+✅ Given the user is viewing a specific Trello board❗ When the user clicks on the '+ Add List' button
+⚠️ Then the user should see list name field
+⚠️ When the user enters a list name and clicks on the 'Add list' button
+⚠️ Then the new list should appear on the board
+
+]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call click on element with selector "button[data-testid="list-composer-button"]" because element wasn't found
+    at implicitWait (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:49:13)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6868:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async AddListPopUp.addAListButtonClick (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/po/components/add.list.js:50:5)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/createBoardList.steps.js:18:3)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account Management" name="Create a card on a list" time="8.666">
+      <failure message="Error: element (&quot;//li[@data-testid=&quot;list-wrapper&quot;][last()]//h2[@data-testid=&quot;list-name&quot;][last()]&quot;) still not displayed after 8000ms"/>
+      <system-out><![CDATA[
+❗ Given the user has a list on a Trello board⚠️ When the user clicks on the '+ Add a card' button
+⚠️ Then the user should see a new card field
+⚠️ When the user enters a card name and clicks on the 'Add a card' button
+⚠️ Then the new card should be added to the list
+
+]]></system-out>
+      <system-err><![CDATA[
+Error: element ("//li[@data-testid="list-wrapper"][last()]//h2[@data-testid="list-name"][last()]") still not displayed after 8000ms
+    at <anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:4680:15)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6872:24)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6872:24)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/createListCard.steps.js:15:3)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account Management" name="Search for a board" time="10.362">
+      <failure message="Error: Can't call click on element with selector &quot;//div[@class=&quot;hQdzCqwE1c7MY1&quot;]&quot; because element wasn't found"/>
+      <system-out><![CDATA[
+✅ Given the user is on the Trello homepage❗ When the user clicks on the search bar
+⚠️ Then the user should see a search popup
+⚠️ When the user entered the board name
+⚠️ Then the relevant board should appear in the search results
+
+]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call click on element with selector "//div[@class="hQdzCqwE1c7MY1"]" because element wasn't found
+    at implicitWait (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:49:13)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6868:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async Header.headerSearchBlockClick (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/po/components/header.js:37:5)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/searchBoard.steps.js:18:3)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account Management" name="Edit user profile information" time="10.34">
+      <failure message="Error: Can't call click on element with selector &quot;//div[@data-testid=&quot;header-member-menu-avatar&quot;]&quot; because element wasn't found"/>
+      <system-out><![CDATA[
+✅ Given the user on the Trello boards page❗ When the user click on account icon
+⚠️ Then the user should see a account menu
+⚠️ When the user click on Profile and visibility button
+⚠️ Then the user navigates to the profile settings
+⚠️ When the user update their profile information and click save button
+⚠️ Then the changes should be saved successfully, and the user will see an alert
+
+]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call click on element with selector "//div[@data-testid="header-member-menu-avatar"]" because element wasn't found
+    at implicitWait (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:49:13)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6868:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async Header.headerAccountButtonClick (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/po/components/header.js:34:5)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/editProfile.steps.js:18:3)
+]]></system-err>
+    </testcase>
+    <testcase classname="CucumberJUnitReport-chrome.130_0_6723_92.mac.Trello Account Management" name="Edit workspace details" time="10.476">
+      <failure message="Error: Can't call click on element with selector &quot;//a[@data-testid=&quot;home-team-settings-tab&quot;]&quot; because element wasn't found"/>
+      <system-out><![CDATA[
+✅ Given the user on Trello boards page❗ When the user press settings button
+⚠️ Then the user navigates to the Trello workspace settings page
+⚠️ When the user press pencil icon
+⚠️ Then the user should see a organization detail form
+⚠️ When the user enters a new workspace name and click save button
+⚠️ Then the workspace title should be updated
+]]></system-out>
+      <system-err><![CDATA[
+Error: Can't call click on element with selector "//a[@data-testid="home-team-settings-tab"]" because element wasn't found
+    at implicitWait (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:49:13)
+    at Element.elementErrorHandlerCallbackFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/runner/node_modules/webdriverio/build/index.js:6868:23)
+    at Element.wrapCommandFn (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/node_modules/@wdio/utils/build/index.js:1380:23)
+    at async BoardsPage.settingsButtonClick (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/po/pages/boards.page.js:17:12)
+    at async World.<anonymous> (/Users/bogdan_mykhailov/Documents/bogdan_work/gherkin/src/step-definitions/editWorkspace.steps.js:20:3)
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

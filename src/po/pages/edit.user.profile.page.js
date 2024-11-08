@@ -14,7 +14,7 @@ class EditUserProfilePage extends BasePage {
   async verifyRedirectionToEditProfilePage() {
     await browser.waitUntil(async () => {
       return this.actualUrl = await browser.getUrl();
-    }, { timeout: 8000 });
+    }, { timeout: 15000 });
 
     return { actualUrl: this.actualUrl, expectedUrl: this.url };
   }

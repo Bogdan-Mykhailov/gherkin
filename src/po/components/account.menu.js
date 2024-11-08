@@ -2,9 +2,9 @@ class AccountMenu {
   constructor() {
     this.selectors = {
       profileAndVisibilityButton: '//a[@data-testid="account-menu-profile"]',
-      accountMenu: 'div[data-testid="account-menu"]',
-      userNameField: 'input[id="username"]',
-      bioField: 'textarea[id="bio"]',
+      accountMenu: '//div[@data-testid="account-menu"]',
+      userNameField: '//input[@id="username"]',
+      bioField: '//textarea[@id="bio"]',
       saveButton: '//button[@type="submit"]',
       alert: '//span[@class="QMKgZFIlTLiEJN"]',
     };

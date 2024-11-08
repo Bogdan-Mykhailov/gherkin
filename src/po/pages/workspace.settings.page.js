@@ -32,10 +32,7 @@ class WorkspaceSettingsPage extends BasePage {
         const currentUrl = await browser.getUrl();
         return currentUrl === this.url;
       },
-      {
-        timeout: 8000,
-        timeoutMsg: `Expected to be redirected to ${this.url} but was not.`,
-      },
+      { timeout: 15000 },
     );
     return await browser.getUrl();
   }

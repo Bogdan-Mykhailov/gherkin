@@ -1,9 +1,9 @@
 class SearchBoardPopUp {
   constructor() {
     this.selectors = {
-      searchBoardPopUp: 'div[data-test-id="search-dialog-dialog-wrapper"]',
-      searchField: 'input[data-test-id="search-dialog-input"]',
-      searchResult: '//div[@data-test-id="search-dialog-dialog-wrapper"]//span[contains(text(), "board4")]',
+      searchBoardPopUp: '//div[@data-test-id="search-dialog-dialog-wrapper"]',
+      searchField: '//input[@data-test-id="search-dialog-input"]',
+      searchResult: '//div[@data-test-id="search-dialog-dialog-wrapper"]//span[contains(text(), "test")]',
     };
   }
 

@@ -50,9 +50,9 @@ exports.config = {
   // https://saucelabs.com/platform/platform-configurator
   //
   capabilities: [
-    // {
-    //   browserName: 'chrome',
-    // },
+    {
+      browserName: 'chrome',
+    },
     // {
     //   browserName: 'firefox',
     // },
@@ -62,12 +62,12 @@ exports.config = {
         args: ['-headless', '--disable-gpu'],
       },
     },
-    {
-      browserName: 'chrome',
-      'goog:chromeOptions': {
-        args: ['-headless', '--disable-gpu'],
-      },
-    },
+    // {
+    //   browserName: 'chrome',
+    //   'goog:chromeOptions': {
+    //     args: ['-headless', '--disable-gpu'],
+    //   },
+    // },
     {
       browserName: 'safari',
     },
@@ -106,7 +106,7 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  // baseUrl: 'http://localhost:8080',
+  baseUrl: 'https://trello.com',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,

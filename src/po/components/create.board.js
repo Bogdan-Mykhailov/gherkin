@@ -2,10 +2,10 @@ class CreateBoardPopUp {
   constructor() {
     this.selectors = {
       createBoardButton: '//button[@data-testid="header-create-board-button"]',
-      optionsList: 'nav[class="IfckxJ5PbpJuxT"]',
-      boardTitleField: 'input[data-testid="create-board-title-input"]',
+      optionsList: '//nav[@class="IfckxJ5PbpJuxT"]',
+      boardTitleField: '//input[@data-testid="create-board-title-input"]',
       createButton: '//button[@data-testid="create-board-submit-button"]',
-      createBoardMenu: 'div[class="q2PzD_Dkq1FVX3 pt-0"]',
+      createBoardMenu: '//div[@class="q2PzD_Dkq1FVX3 pt-0"]',
     };
   }
 

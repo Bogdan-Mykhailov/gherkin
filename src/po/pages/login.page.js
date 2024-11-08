@@ -7,12 +7,12 @@ class LoginPage extends BasePage {
 
   constructor() {
     super();
-    this.url = 'https://trello.com/login';
+    this.path = '/login';
     this.loginForm = new LoginForm();
   }
 
   async open() {
-    await super.open(this.url);
+    await super.open(this.path);
   }
 }
 

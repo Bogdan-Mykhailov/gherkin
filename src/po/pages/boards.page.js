@@ -18,7 +18,7 @@ class BoardsPage extends BasePage {
   }
 
   async open(userName) {
-    return browser.url(`https://trello.com/u/${userName}/boards`);
+    return browser.url(`/u/${userName}/boards`);
   }
 
   async verifyRedirectionToBoardsPage() {
@@ -27,10 +27,7 @@ class BoardsPage extends BasePage {
         const currentUrl = await browser.getUrl();
         return currentUrl === credentials.boardsPageUrl;
       },
-      {
-        timeout: 8000,
-        timeoutMsg: `Expected to be redirected to ${credentials.boardsPageUrl} but was not.`,
-      },
+      { timeout: 15000 },
     );
     return await browser.getUrl();
   }

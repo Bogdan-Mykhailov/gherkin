@@ -26,6 +26,8 @@
     "wdio-safaridriver-service": "^2.1.1"
   },
   "dependencies": {
-    "@wdio/globals": "^9.2.1"
+    "@wdio/globals": "^9.2.1",
+    "pino": "^9.5.0",
+    "pino-pretty": "^12.1.0"
   }
 }

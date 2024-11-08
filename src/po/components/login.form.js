@@ -1,9 +1,9 @@
 class LoginForm {
   constructor() {
     this.selectors = {
-      emailInput: 'input[data-testid="username"]',
-      signUpButton: 'button[id="login-submit"]',
-      passwordInput: 'input[data-testid="password"]',
+      emailInput: '//input[@data-testid="username"]',
+      signUpButton: '//button[@id="login-submit"]',
+      passwordInput: '//input[@data-testid="password"]',
     };
   }
 

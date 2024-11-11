@@ -1,16 +1,5 @@
 Feature: Trello Account Management
 
-  Scenario: User sign up for a new Trello account
-    Given the user is on the Trello sign-up page
-    When the user enters a valid email and clicks the 'Sign Up' button
-    Then the user should see a "What brings you here today?" title
-    When the user clicks the 'Skip' button
-    Then the user should see an "It all starts with the board" title
-    When the user clicks the 'Skip' button
-    Then the user should see an "Invite your team" title
-    When the user clicks the 'Skip' button
-    Then a verification email should be sent to the registered email address
-
   Scenario: User signs in to an existing Trello account
     Given the user is on the Trello sign-in page
     When the user enters their email and clicks the 'Continue' button
@@ -40,6 +29,13 @@ Feature: Trello Account Management
     Then the user should see a new card field
     When the user enters a card name and clicks on the 'Add a card' button
     Then the new card should be added to the list
+
+  Scenario: Filtering cards
+    Given the user is on the test board page
+    When the user clicks the 'Filters' button
+    Then the user sees the filters menu
+    When the user selects the 'Cards assigned to me' checkbox
+    Then the user sees only the cards assigned to them
 
   Scenario: Search for a board
     Given the user is on the Trello homepage

@@ -31,6 +31,7 @@ Then('the user should see a new card field', async () => {
 
 When('the user enters a card name and clicks on the \'Add a card\' button', async () => {
   await singleBoardPage.addListPopUp.enterNewCardTitle(credentials.cardTitle);
+  await browser.pause(1000);
   await singleBoardPage.addListPopUp.addCardButtonClick();
   logger.info('Card name was entered and Add a card button clicked');
 });

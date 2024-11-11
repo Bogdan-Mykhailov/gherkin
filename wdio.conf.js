@@ -50,27 +50,22 @@ exports.config = {
   // https://saucelabs.com/platform/platform-configurator
   //
   capabilities: [
-    {
-      browserName: 'chrome',
-    },
-    // {
-    //   browserName: 'firefox',
-    // },
+    { browserName: 'chrome' },
+    // { browserName: 'firefox' },
     {
       browserName: 'firefox',
       'moz:firefoxOptions': {
         args: ['-headless', '--disable-gpu'],
       },
     },
+    // todo i have a problems with the headless mode in chrome, coz i always getting a message to paste the confirmation code
     // {
     //   browserName: 'chrome',
     //   'goog:chromeOptions': {
     //     args: ['-headless', '--disable-gpu'],
     //   },
     // },
-    {
-      browserName: 'safari',
-    },
+    { browserName: 'safari' },
   ],
 
   acceptInsecureCerts: true,

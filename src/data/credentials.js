@@ -7,7 +7,7 @@ module.exports = {
     userNameForUpdate: 'bogdan_mykhailov2',
     userBio: 'London is the capital of GB',
     boardsPageUrl: 'https://trello.com/u/bogdan_mykhailov1/boards',
-    singleBoardUrl: 'https://trello.com/b/SSmM6WMl/test',
+    singleBoardUrl: 'https://trello.com/b/rwU00tld/test',
     listTitle: 'New List',
     searchingBoardTitle: 'test',
     cardTitle: 'learn AWS',

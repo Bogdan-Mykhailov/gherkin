@@ -42,6 +42,7 @@ Then('the user should see create board menu', async () => {
 
 When('the user enters a title for the board and clicks \'Create\' button', async () => {
   await boardsPage.header.createBoard.enterTheBoardTitle(credentials.boardTitle);
+  await browser.pause(1000);
   await boardsPage.header.createBoard.createButtonClick();
   logger.info('Title for board was entered and Create button clicked');
 });
@@ -50,4 +51,7 @@ Then('the new board should be created and navigated to it', async () => {
   const { actualUrl, expectedUrl } = await singleBoardPage.verifyBoardCreationAndNavigation();
   await expect(actualUrl).toBe(expectedUrl);
   logger.info('New board created and navigated on it');
+  await singleBoardPage.sidebarMenu.closeBoard();
+  logger.info('Board was deleted');
 });
+

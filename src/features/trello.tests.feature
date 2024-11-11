@@ -30,6 +30,13 @@ Feature: Trello Account Management
     When the user enters a card name and clicks on the 'Add a card' button
     Then the new card should be added to the list
 
+  Scenario: Filtering cards
+    Given the user is on the test board page
+    When the user clicks the 'Filters' button
+    Then the user sees the filters menu
+    When the user selects the 'Cards assigned to me' checkbox
+    Then the user sees only the cards assigned to them
+
   Scenario: Search for a board
     Given the user is on the Trello homepage
     When the user clicks on the search bar
